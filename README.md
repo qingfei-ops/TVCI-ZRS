@@ -32,4 +32,4 @@ Finally, inference again with pseudo unseen visual prototypes to get final predi
 
 
 ## Acknowledgement
-This project is based on [FC-CLIP](https://github.com/bytedance/fc-clip). Many thanks to the authors for their great work!
+This project is based on [FC-CLIP](https://github.com/bytedance/fc-clip).[ZoRI](https://github.com/HuangShiqi128/ZoRI.) Many thanks to the authors for their great work!
