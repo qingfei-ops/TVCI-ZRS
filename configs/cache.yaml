@@ -1,0 +1,40 @@
+MODEL_NAME: "convnext_large_d_320"
+PRETRAIN: "laion2b_s29b_b131k_ft_soup"
+DATASET: 'isaid_zsi_11_4_train_all'
+USE_TEXT_BANK: True  # 启用文本缓存库增强
+PIXEL_MEAN: [122.7709383, 116.7460125, 104.09373615]
+PIXEL_STD: [68.5005327, 66.6321579, 70.32316305]
+VIS_CHANNEL_INDICES: '/home/bao/ZoRI/out2/vis_indices/refined_channel_11_4_160.pt' # IPAN模块视觉通道索引
+INPUT:
+  IMAGE_SIZE: 800
+CLASS_NAMES: [
+    "building", "road", "water", "barren", "forest",
+    "agricultural", "playground", "railway", "bridge",
+    "airport", "ship"  # ISaid11_4数据集的11个类别
+]
+W: [0.7, 0.3]
+
+OUTPUT_DIR: "./out2"
+
+# PROTOTYPE_NUM: [32, 16, 8, 4, 2, 1]
+PROTOTYPE_NUM: [6]
+
+# CHANNEL_NUM: [700, 600, 500, 400, 300, 200, 100]
+CHANNEL_NUM: [200]
+
+# VIS_CHANNEL_NUM: [40, 80, 120, 160]
+VIS_CHANNEL_NUM: [160]
+
+RESULTS: '/home/bao/ZoRI/zori_isaid_11_4/inference/coco_instances_results.json'
+CLASS_DESCRIPTIONS:
+  0: ["building", "a satellite image of a building", "urban building structure", "man-made building in aerial view"]
+  1: ["road", "paved road in satellite image", "aerial view of highway", "transportation road in city"]
+  2: ["water", "river or lake in satellite image", "blue water body in aerial view", "natural water surface"]
+  3: ["barren", "desert land", "rocky area without vegetation", "barren soil in aerial view"]
+  4: ["forest", "dense tree forest", "coniferous forest in satellite image", "broadleaf forest area"]
+  5: ["agricultural", "farmland in aerial view", "cultivated agricultural land", "crop field in satellite image"]
+  6: ["playground", "sports playground", "recreational playground area", "outdoor playground in aerial view"]
+  7: ["railway", "train railway track", "railway line in satellite image", "railway infrastructure"]
+  8: ["bridge", "overpass bridge", "road bridge structure", "bridge over water or land"]
+  9: ["airport", "airport runway", "airport terminal building", "airport infrastructure in aerial view"]
+  10: ["ship", "ship on water", "vessel in satellite image", "large ship in port"]
